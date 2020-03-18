@@ -1,2 +1,82 @@
-<h1>Home page</h1>
-<p>The starter page for everything</p>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Budget Bites</title>
+		<meta name="description" content="my website">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="BudgetBites.css">
+	</head>
+	
+	<body>
+		<header>
+			<h1>Budget Bites</h1>
+			
+			<nav>
+				<label>Search by food type:</label>
+
+				<select id="TypeofFood">
+				<option value="American">American</option>
+				<option value="Chinese">Chinese</option>
+				<option value="Mexican">Mexican</option>
+				<option value="Italian">Italian</option>
+				</select>
+				
+				<label for="Price">Search by price:</label>
+
+				<select id="Price">
+				<option value="$">$: $1-$10</option>
+				<option value="$$">$$: $11-$20</option>
+				<option value="$$$">$$$: $21 and up</option>
+				</select>
+				
+				<form action="/action_page.php">
+				<input type="text" placeholder="Search.." name="search">
+				<button type="submit">Submit</button>
+    </form>
+			</nav>
+		</header>
+		<main>
+
+			<h2>What is Budget Bites?</h2>
+            
+		<p>Budget Bites is a website designed for students at the University of North Carolina at Charlotte. Our site was made to help students find place to eat around campus,
+		try new foods, show what meals students can by on a budget. On our site you can search for by food type, price, or by resturant name.</p>
+		  
+		 <div class="row">
+			<div class="column">
+				<div class="card">
+				<h3>Resturant 1</h3>
+				<p>Some text</p>
+				<p>Some text</p>
+				</div>
+			</div>
+
+			<div class="column">
+				<div class="card">
+				<h3>Resturant 2</h3>
+				<p>Some text</p>
+				<p>Some text</p>
+				</div>
+			</div>
+  
+			<div class="column">
+				<div class="card">
+				<h3>Resturant 3</h3>
+				<p>Some text</p>
+				<p>Some text</p>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+		
+		</main>
+		<footer>
+			<p>Copyright © Budget Bites<br>
+			jcuartas@uncc.edu</p>
+			<a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> 
+			<a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+		</footer>
+		</body>
+</html>
