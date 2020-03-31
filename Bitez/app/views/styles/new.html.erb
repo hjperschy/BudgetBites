@@ -1,0 +1,21 @@
+<h1>Styles database helper</h1>
+<%= form_for :styles, url: styles_path do |f| %>
+<p>
+    <%= f.label :styleType %>
+    <%= f.text_field :styleType %>
+</p>
+
+<p>
+    <%= f.label :resturant %>
+    <%= f.text_field :resturant %>
+</p>
+
+<p>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+<% end %>
