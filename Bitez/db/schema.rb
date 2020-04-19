@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200331150209) do
+ActiveRecord::Schema.define(version: 20200413201301) do
 
   create_table "styles", force: :cascade do |t|
     t.string   "styleType"
     t.string   "resturant"
-    t.string   "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.boolean  "db"
+    t.boolean  "studentDiscount"
   end
 
 end

@@ -1,0 +1,29 @@
+<h1>Listing resturants</h1>
+ <%= link_to 'New resturant', new_style_path %>
+<table>
+  <tr>
+    <th>Style</th>
+    <th>Resturant</th>
+    <th>DB</th>
+    <th>StudentDisc</th>
+  </tr>
+ 
+  <% @styles.each do |style| %>
+    <tr>
+      <td><%= style.styleType %></td>
+      <td><%= style.resturant %></td>
+      <td><% if style.db %>
+            <%= "Yes" %>
+          <% end %>
+      </td>
+      <td><% if style.studentDiscount %>
+            <%= "Yes" %>
+          <% end %>
+      </td>
+      <td><%= link_to 'Edit', edit_style_path(style) %></td>
+      <td><%= link_to 'Destroy', style_path(style), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', home_index_url %>

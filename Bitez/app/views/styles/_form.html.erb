@@ -1,0 +1,26 @@
+<h1>Styles database helper</h1>
+<%= form_for @style do |f| %>
+<p>
+    <%= f.label :styleType %>
+    <%= f.text_field :styleType %>
+</p>
+
+<p>
+    <%= f.label :resturant %>
+    <%= f.text_field :resturant %>
+</p>
+
+<p>
+    <%= f.label :db %>
+    <%= f.check_box :db %>
+</p>
+
+<p>
+    <%= f.label :studentDiscount %>
+    <%= f.check_box :studentDiscount %>
+</p>
+
+<p>
+    <%= f.submit %>
+</p>
+<% end %>
