@@ -1,0 +1,13 @@
+<p>
+    <strong>Name:</strong>
+    <%= item.name %>
+</p>
+
+<p>
+    <strong>Price:</strong>
+    <%= item.price %>
+</p>
+
+<p>
+    <%= link_to 'Destroy Item', [item.style, item], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>

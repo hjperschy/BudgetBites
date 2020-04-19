@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200419170258) do
+ActiveRecord::Schema.define(version: 20200419171041) do
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.integer  "style_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["style_id"], name: "index_items_on_style_id"
+  end
 
   create_table "styles", force: :cascade do |t|
     t.string   "styleType"

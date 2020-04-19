@@ -1,0 +1,16 @@
+<%= form_for([@style, @style.items.build]) do |f| %>
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </p>
+    
+    <p>
+        <%= f.label :price %><br>
+        <%= f.number_field :price, step: :any %>
+    </p>
+    
+    <p>
+        <%= f.submit %>
+    </p>
+    
+<% end %>

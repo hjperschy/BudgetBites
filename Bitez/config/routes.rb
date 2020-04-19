@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
   
-  resources :styles
+  resources :styles do
+    resources :items
+  end
   
   root 'home#index'
 
