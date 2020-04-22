@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200419171041) do
+ActiveRecord::Schema.define(version: 20200422193513) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20200419171041) do
     t.boolean  "db"
     t.boolean  "studentDiscount"
     t.string   "address"
+    t.float    "avgPrice"
   end
 
 end

@@ -44,5 +44,5 @@ end
 
 private
     def style_params
-        params.require(:style).permit(:resturant, :styleType, :address, :db, :studentDiscount)
+        params.require(:style).permit(:resturant, :styleType, :address, :db, :studentDiscount, :avgPrice)
     end
