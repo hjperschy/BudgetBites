@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
+  get 'styles/show'
   
   resources :styles do
     resources :items
