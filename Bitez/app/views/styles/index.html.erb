@@ -1,9 +1,9 @@
-<h1>Listing resturants</h1>
+<h1>Listing restaurants</h1>
  <%= link_to 'New resturant', new_style_path %>
 <table>
   <tr>
     <th>Style</th>
-    <th>Resturant</th>
+    <th>Restaurant</th>
     <th>Address</th>
     <th>DB</th>
     <th>StudentDisc</th>
@@ -21,14 +21,19 @@
       <td><% if style.studentDiscount %>
             <%= "Yes" %>
           <% end %>
-      </td
-      </td>>
-      <td><%= link_to 'Show', style_path(style) %></td>
-      <td>
-          <%= link_to 'Edit', edit_style_path(style) %>
-      <td>
-          <%= link_to 'Destroy', style_path(style), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+      </td>
+      <td><% if session[:user_id] %>
+            <%= link_to 'Show', style_path(style) %>
+          <% end %>
+      </td>
+      <td><% if session[:user_id] %>
+            <%= link_to 'Edit', edit_style_path(style) %>
+          <% end %>
+      </td>
+      <td><% if session[:user_id] %>
+            <%= link_to 'Destroy', style_path(style), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

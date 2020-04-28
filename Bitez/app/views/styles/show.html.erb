@@ -1,5 +1,5 @@
 <p>
-    <strong>Resturant:</strong>
+    <strong>Restaurant:</strong>
     <%= @style.resturant %>
 </p>
 
@@ -31,7 +31,9 @@
 <h2>Items</h2>
 <%= render @style.items %>
 
-<h2>Add an item:</h2>
-<%= render 'items/form' %>
+<% if session[:user_id] %>
+    <h2>Add an item:</h2>
+    <%= render 'items/form' %>
+<% end %>
 
-<%= link_to 'Resturants', styles_path %>
+<%= link_to 'Restaurants', styles_path %>
