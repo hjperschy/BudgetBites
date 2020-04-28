@@ -1,4 +1,5 @@
 class Style < ApplicationRecord
+    belongs_to :user
     has_many :items, dependent: :destroy
     validates :resturant, presence: true
     validates :styleType, presence: true

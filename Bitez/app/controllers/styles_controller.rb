@@ -13,6 +13,7 @@ class StylesController < ApplicationController
     
     def create
         @style = Style.new(style_params)
+        @style.user = current_user
         
         if @style.save
             redirect_to @style
