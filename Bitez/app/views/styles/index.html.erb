@@ -21,10 +21,14 @@
       <td><% if style.studentDiscount %>
             <%= "Yes" %>
           <% end %>
-      </td>
+      </td
+      </td>>
       <td><%= link_to 'Show', style_path(style) %></td>
-      <td><%= link_to 'Edit', edit_style_path(style) %></td>
-      <td><%= link_to 'Destroy', style_path(style), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td>
+          <%= link_to 'Edit', edit_style_path(style) %>
+      <td>
+          <%= link_to 'Destroy', style_path(style), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
     </tr>
   <% end %>
 </table>

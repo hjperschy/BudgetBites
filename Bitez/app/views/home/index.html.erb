@@ -34,7 +34,7 @@
 				<button type="submit">Submit</button>
     </form>
 			</nav>
-			<p>
+			<p class="SignIn">
 				<% if current_user %>
 					Logged in as <%= current_user.name %>
 					<%= link_to "Log Out", logout_path %>
@@ -43,6 +43,9 @@
 					<%= link_to "Log In", login_path %>
 				<% end %>
 			</p>
+			<div class="LinkRest">
+				<button><%= link_to "Listed Restaurants", styles_path %></button>
+			</div><br>
 		</header>
 		<main>
 
