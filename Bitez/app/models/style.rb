@@ -5,6 +5,6 @@ class Style < ApplicationRecord
     validates :styleType, presence: true
     validates :address, presence: true
     validates :avgPrice, presence: true
-    scope :filter_by_style, -> (style) { where styleType: style }
-    scope :filter_by_price, -> (price) { where avgPrice: price }
+    scope :filter_by_style, -> (style) { where("styleType == ?", style) }
+    scope :filter_by_price, -> (high, low) { where("avgPrice >= ?", low) && where("avgPrice <= ?", high) }
 end

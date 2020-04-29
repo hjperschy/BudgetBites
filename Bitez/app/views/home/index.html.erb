@@ -12,27 +12,26 @@
 			<h1>Budget Bites</h1>
 			
 			<nav>
-				<label>Search by food type:</label>
-
-				<select id="TypeofFood">
-				<option value="American">American</option>
-				<option value="Chinese">Chinese</option>
-				<option value="Mexican">Mexican</option>
-				<option value="Italian">Italian</option>
-				</select>
+				<form action="/home/index">
+					<label for="TypeofFood">Search by food type:</label>
+					<select id="TypeofFood" name="TypeofFood">
+						<option value="None" selected>None</option>
+						<option value="American">American</option>
+						<option value="Chinese">Chinese</option>
+						<option value="Mexican">Mexican</option>
+						<option value="Italian">Italian</option>
+					</select>
 				
-				<label for="Price">Search by price:</label>
+					<label for="Price">Search by price:</label>
+					<select id="Price" name="Price">
+						<option value="None" selected>None</option>
+						<option value="$">$: $1-$10</option>
+						<option value="$$">$$: $11-$20</option>
+						<option value="$$$">$$$: $21 and up</option>
+					</select>
 
-				<select id="Price">
-				<option value="$">$: $1-$10</option>
-				<option value="$$">$$: $11-$20</option>
-				<option value="$$$">$$$: $21 and up</option>
-				</select>
-				
-				<form action="/action_page.php">
-				<input type="text" placeholder="Search.." name="search">
-				<button type="submit">Submit</button>
-    </form>
+					<button type="submit">Submit</button>
+				</form>
 			</nav>
 			<p class="SignIn">
 				<% if current_user %>
@@ -53,8 +52,15 @@
             
 		<p>Budget Bites is a website designed for students at the University of North Carolina at Charlotte. Our site was made to help students find place to eat around campus,
 		try new foods, show what meals students can by on a budget. On our site you can search for by food type, price, or by restaurant name.</p>
-		  
-		<div class="row">
+		 
+		
+		 
+		<p> 
+		<% @restaurants.each do |res| %>
+			<%= link_to res.resturant, style_path(res) %>
+		<% end %>
+		</p>
+		<!-- <div class="row">
 			<div class="column">
 				<div class="card">
 				<h3>Restaurant 1</h3>
@@ -81,7 +87,7 @@
 			
 			
 			
-		</div>
+		</div> -->
 		
 		</main>
 		<footer>
