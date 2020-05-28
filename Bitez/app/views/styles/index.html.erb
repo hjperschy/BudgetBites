@@ -1,41 +1,60 @@
-<h1>Listing restaurants</h1>
- <%= link_to 'New resturant', new_style_path %>
-<table>
-  <tr>
-    <th>Style</th>
-    <th>Restaurant</th>
-    <th>Address</th>
-    <th>DB</th>
-    <th>StudentDisc</th>
-  </tr>
- 
-  <% @styles.each do |style| %>
-    <tr>
-      <td><%= style.styleType %></td>
-      <td><%= style.resturant %></td>
-      <td><%= style.address %></td>
-      <td><% if style.db %>
-            <%= "Yes" %>
-          <% end %>
-      </td>
-      <td><% if style.studentDiscount %>
-            <%= "Yes" %>
-          <% end %>
-      </td>
-      <td><% if session[:user_id] %>
-            <%= link_to 'Show', style_path(style) %>
-          <% end %>
-      </td>
-      <td><% if session[:user_id] %>
-            <%= link_to 'Edit', edit_style_path(style) %>
-          <% end %>
-      </td>
-      <td><% if session[:user_id] %>
-            <%= link_to 'Destroy', style_path(style), method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 15px;
+            }
+        </style>
+    </head>
+
+    <h2>Listing restaurants</h2>
+        <%= link_to 'New resturant', new_style_path %>
+    <table>
+        <tr>
+            <th>Style</th>
+            <th>Restaurant</th>
+            <th>Address</th>
+            <th>DB</th>
+            <th>StudentDisc</th>
+        </tr>
+        
+    <% @styles.each do |style| %>
+        <tr>
+            <td><%= style.styleType %></td>
+            <td><%= style.resturant %></td>
+            <td><%= style.address %></td>
+            <td><% if style.db %>
+                    <%= "Yes" %>
+                <% end %>
+            </td>
+            <td><% if style.studentDiscount %>
+                    <%= "Yes" %>
+                <% end %>
+            </td>
+            <% if session[:user_id] %>
+                <td>
+                    <%= link_to 'Show', style_path(style) %>
+                </td>
+            <% end %>
+            <% if session[:user_id] %>
+                <td>
+                    <%= link_to 'Edit', edit_style_path(style) %>
+                </td>
+            <% end %>
+            <% if session[:user_id] %>
+                <td>
+                    <%= link_to 'Destroy', style_path(style), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            <% end %>
+        </tr>
+    <% end %>
+    </table>
 
 <%= link_to 'Back', home_index_url %>
+
+</html>
