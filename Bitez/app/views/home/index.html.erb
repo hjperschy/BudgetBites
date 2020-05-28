@@ -9,6 +9,7 @@
 	
 	<body>
 		<header>
+			<br>
 			<h1>Budget Bites</h1>
 			
 			<nav>
@@ -29,7 +30,8 @@
 						<option value="$$">$$: $11-$20</option>
 						<option value="$$$">$$$: $21 and up</option>
 					</select>
-
+					<br>
+					<br>
 					<button type="submit">Submit</button>
 				</form>
 			</nav>
@@ -50,16 +52,24 @@
 
 			<h2>What is Budget Bites?</h2>
             
-		<p>Budget Bites is a website designed for students at the University of North Carolina at Charlotte. Our site was made to help students find place to eat around campus,
-		try new foods, show what meals students can by on a budget. On our site you can search for by food type, price, or by restaurant name.</p>
-		 
+		<info>Budget Bites is a website designed for students at the University of North Carolina at Charlotte. Our site was made to help students find place to eat around campus,
+		try new foods, show what meals students can by on a budget. On our site you can search for by food type, price, or by restaurant name.<info><br>
 		
+		<br><h2>Restaurants</h2><br>
 		 
-		<p> 
+		<% i = 0 %>
+		
 		<% @restaurants.each do |res| %>
-			<%= link_to res.resturant, style_path(res) %>
+			<div class="column">
+				<div class="card">
+					<h3><%= link_to res.resturant, style_path(res) %></h3>
+				</div>
+			</div>
+			<% i += 1 %>
+			<% if i%4 == 0 %>
+				<br>
+			<% end %>
 		<% end %>
-		</p>
 		<!-- <div class="row">
 			<div class="column">
 				<div class="card">
@@ -90,10 +100,29 @@
 		</div> -->
 		
 		</main>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<footer>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			<p>Copyright © Budget Bites<br>
 			jcuartas@uncc.edu<br>
-			rfritz2@uncc.edu</p>
+			rfritz2@uncc.edu<br>
+			hperschy@uncc.edu</p>
 			<a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> 
 			<a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
 		</footer>
