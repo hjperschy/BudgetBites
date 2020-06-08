@@ -1,5 +1,6 @@
 <p id="alert"><%= alert %></p>
-<h1>Login</h1>
+<header><br><h1>Login</h1><br></header>
+<br>
 <%= form_tag sessions_path do |form| %>
     <div class="field">
         <%= label_tag :email %>
@@ -13,3 +14,5 @@
         <%= submit_tag "Login" %>
     </div>
 <% end %>
+<br>
+<strong><%= link_to 'Back', home_index_url %></strong>

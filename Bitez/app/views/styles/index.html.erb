@@ -3,21 +3,33 @@
     <head>
         <style>
             table, th, td {
-                border: 1px solid black;
+                border: 3px solid black;
                 border-collapse: collapse;
             }
             th, td {
+                font-size: 20px;
                 padding: 15px;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
             }
         </style>
     </head>
 
-    <h2>Listing restaurants</h2>
-        <%= link_to 'New resturant', new_style_path %>
+    <header>
+        <br>
+        <h2>Restaurants</h2>
+        <br>
+    </header>
+    <br>
+    <% if session[:user_id] %>
+        <strong><%= link_to 'New restaurant', new_style_path %></strong>
+    <% end %>
     <table>
         <tr>
-            <th>Style</th>
             <th>Restaurant</th>
+            <th>Style</th>
             <th>Address</th>
             <th>DB</th>
             <th>StudentDisc</th>
@@ -25,8 +37,8 @@
         
     <% @styles.each do |style| %>
         <tr>
+            <td><%= link_to style.resturant, style_path(style) %></td>
             <td><%= style.styleType %></td>
-            <td><%= style.resturant %></td>
             <td><%= style.address %></td>
             <td><% if style.db %>
                     <%= "Yes" %>
@@ -36,11 +48,6 @@
                     <%= "Yes" %>
                 <% end %>
             </td>
-            <% if session[:user_id] %>
-                <td>
-                    <%= link_to 'Show', style_path(style) %>
-                </td>
-            <% end %>
             <% if session[:user_id] %>
                 <td>
                     <%= link_to 'Edit', edit_style_path(style) %>
@@ -55,6 +62,6 @@
     <% end %>
     </table>
 
-<%= link_to 'Back', home_index_url %>
+    <strong><%= link_to 'Back', home_index_url %></strong>
 
 </html>

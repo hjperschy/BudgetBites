@@ -8,6 +8,8 @@
     <%= item.price %>
 </p>
 
-<p>
-    <%= link_to 'Destroy Item', [item.style, item], method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
+<% if session[:user_id] %>
+    <p>
+        <%= link_to 'Destroy Item', [item.style, item], method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+<% end %>

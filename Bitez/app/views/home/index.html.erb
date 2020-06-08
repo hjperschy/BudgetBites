@@ -5,6 +5,11 @@
 		<meta name="description" content="my website">
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="BudgetBites.css">
+		<style>
+			p {
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -38,10 +43,10 @@
 			<p class="SignIn">
 				<% if current_user %>
 					Logged in as <%= current_user.name %>
-					<%= link_to "Log Out", logout_path %>
+					<strong><%= link_to "Log Out", logout_path %></strong>
 				<% else %>
-					<%= link_to "Sign Up", signup_path %> or
-					<%= link_to "Log In", login_path %>
+					<strong><%= link_to "Sign Up", signup_path %></strong> or
+					<strong><%= link_to "Log In", login_path %></strong>
 				<% end %>
 			</p>
 			<div class="LinkRest">
@@ -55,7 +60,9 @@
 		<info>Budget Bites is a website designed for students at the University of North Carolina at Charlotte. Our site was made to help students find place to eat around campus,
 		try new foods, show what meals students can by on a budget. On our site you can search for by food type, price, or by restaurant name.<info><br>
 		
-		<br><h2>Restaurants</h2><br>
+		<br>
+		<header><br><h2>Restaurants</h2><br></header>
+		<br>
 		 
 		<% i = 0 %>
 		

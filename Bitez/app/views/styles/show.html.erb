@@ -1,39 +1,82 @@
-<p>
-    <strong>Restaurant:</strong>
-    <%= @style.resturant %>
-</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p {
+                font-size: 20px;
+                text-align: center;
+            }
+            table, th, td {
+                border: 3px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                font-size: 20px;
+                padding: 15px;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    
+    <header>
+        <br>
+        <h2><%= @style.resturant %></h2>
+        <br>
+    </header>
+    
+    <p>
+        <strong>Style:</strong>
+        <%= @style.styleType %>
+    </p>
 
-<p>
-    <strong>Style:</strong>
-    <%= @style.styleType %>
-</p>
+    <p>
+        <strong>Address:</strong>
+        <%= @style.address %>
+    </p>
 
-<p>
-    <strong>Address:</strong>
-    <%= @style.address %>
-</p>
+    <p>
+        <strong>DB:</strong>
+        <%= @style.db %>
+    </p>
 
-<p>
-    <strong>DB:</strong>
-    <%= @style.db %>
-</p>
+    <p>
+        <strong>Student Discount:</strong>
+        <%= @style.studentDiscount %>
+    </p>
 
-<p>
-    <strong>Student Discount:</strong>
-    <%= @style.studentDiscount %>
-</p>
+    <p>
+        <strong>Average Price:</strong>
+        <%= @style.avgPrice %>
+    </p>
 
-<p>
-    <strong>Average Price:</strong>
-    <%= @style.avgPrice %>
-</p>
+    <header>
+        <br>
+        <h2>Items</h2>
+        <br>
+    </header>
+    <br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <% @style.items.each do |item| %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.price %></td>
+            </tr>
+        <% end %>
+    </table>
+    
+    <br>
+    <% if session[:user_id] %>
+        <h2>Add an item:</h2>
+        <%= render 'items/form' %>
+    <% end %>
 
-<h2>Items</h2>
-<%= render @style.items %>
-
-<% if session[:user_id] %>
-    <h2>Add an item:</h2>
-    <%= render 'items/form' %>
-<% end %>
-
-<%= link_to 'Restaurants', styles_path %>
+    <br>
+    <strong><%= link_to 'Restaurants', styles_path %> <%= link_to 'Search', home_index_url %></strong>
+</html>
